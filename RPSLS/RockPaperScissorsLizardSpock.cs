@@ -14,6 +14,8 @@ namespace RPSLS
         {
             string UserInput = getUserInput();
             string CompInput = getCompInput();
+            int PlayerOne;
+            int PlayerTwo;
 
             Winner(UserInput, CompInput);
             Console.ReadLine();
@@ -50,10 +52,6 @@ namespace RPSLS
             }
             return "";
         }
-
-
-
-
             string getCompInput()
                 {
 
@@ -84,9 +82,10 @@ namespace RPSLS
 
         public void Winner(string UserInput, string CompInput)
         {
-            if ((UserInput == "Rock" && CompInput == "Scissors" || UserInput == "Rock" && CompInput == "Lizard" || UserInput == "Paper" && CompInput == "Rock" || UserInput == "Paper" && CompInput == "Spock" || UserInput == "Scissors" && CompInput == "Paper" || UserInput == "Scissors" && CompInput == "Lizard" || UserInput == "Lizard" && CompInput == "Spock" || UserInput == "Lizard" && CompInput == "Paper" || UserInput == "Spock" && CompInput == "Scissors" || UserInput == "Spock" && CompInput == "Rock"))
+            if (( UserInput == "Rock" && CompInput == "Scissors" || UserInput == "Rock" && CompInput == "Lizard" || UserInput == "Paper" && CompInput == "Rock" || UserInput == "Paper" && CompInput == "Spock" || UserInput == "Scissors" && CompInput == "Paper" || UserInput == "Scissors" && CompInput == "Lizard" || UserInput == "Lizard" && CompInput == "Spock" || UserInput == "Lizard" && CompInput == "Paper" || UserInput == "Spock" && CompInput == "Scissors" || UserInput == "Spock" && CompInput == "Rock"))
             {
-                Console.Write("Player One wins!");
+            
+                Console.Write("Player One chose " +UserInput+ "and the computer chose " +CompInput+ ". Player One wins!");
             }
 
             else if (UserInput == CompInput)
@@ -96,7 +95,8 @@ namespace RPSLS
 
             else
             {
-                Console.Write("Player one lost.");
+              
+                Console.Write("Player One chose " + UserInput + " and the computer chose " + CompInput + ". Player One lost");
             }
         }
     }
