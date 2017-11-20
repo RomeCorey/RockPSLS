@@ -13,16 +13,13 @@ namespace RPSLS
         public bool IsWinner;
 
         public void Play()
-        {
-            Player PlayerOne = new Player();
-            AI Computer = new AI();
-            string UserInput = PlayerOne.getUserInput();
-            string CompInput = Computer.getCompInput();
-            Winner(UserInput, CompInput);
+        {        
+             
+            PlayerVsAI();
             Console.ReadLine();
         }
 
-        public void Winner(string UserInput, string CompInput)
+        public void PlayerVsAI()
         {
             Player PlayerHuman = new Player();
             AI PlayerComputer = new AI();
@@ -31,8 +28,8 @@ namespace RPSLS
             IsWinner = false;           
             while (!IsWinner)
             {
-                PlayerHuman.getUserInput();
-                PlayerComputer.getCompInput();                
+                string UserInput = PlayerHuman.getUserInput();
+                string CompInput = PlayerComputer.getCompInput();
                 if ((UserInput == "Rock" && CompInput == "Scissors" || UserInput == "Rock" && CompInput == "Lizard" || UserInput == "Paper" && CompInput == "Rock" || UserInput == "Paper" && CompInput == "Spock" || UserInput == "Scissors" && CompInput == "Paper" || UserInput == "Scissors" && CompInput == "Lizard" || UserInput == "Lizard" && CompInput == "Spock" || UserInput == "Lizard" && CompInput == "Paper" || UserInput == "Spock" && CompInput == "Scissors" || UserInput == "Spock" && CompInput == "Rock"))
                 {
                     Console.Write("Player One chose " + UserInput + "and the computer chose " + CompInput + ". Player One wins!");
