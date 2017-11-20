@@ -10,6 +10,10 @@ namespace RPSLS
     {
         static void Main(string[] args)
         {
+            RockPaperScissorsLizardSpock game = new RockPaperScissorsLizardSpock();
+
+            game.Play();
+
         }
     }
 }

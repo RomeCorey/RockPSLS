@@ -1,1 +1,6 @@
 c:\users\cortana\documents\visual studio 2015\Projects\RPSLS\RPSLS\bin\Debug\RPSLS.exe.config
+C:\Users\Cortana\Documents\Visual Studio 2015\Projects\RPSLS\RPSLS\obj\Debug\RPSLS.csprojResolveAssemblyReference.cache
+C:\Users\Cortana\Documents\Visual Studio 2015\Projects\RPSLS\RPSLS\bin\Debug\RPSLS.exe
+C:\Users\Cortana\Documents\Visual Studio 2015\Projects\RPSLS\RPSLS\bin\Debug\RPSLS.pdb
+C:\Users\Cortana\Documents\Visual Studio 2015\Projects\RPSLS\RPSLS\obj\Debug\RPSLS.exe
+C:\Users\Cortana\Documents\Visual Studio 2015\Projects\RPSLS\RPSLS\obj\Debug\RPSLS.pdb
