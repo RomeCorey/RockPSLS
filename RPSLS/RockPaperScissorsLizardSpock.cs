@@ -7,84 +7,32 @@ using System.Threading.Tasks;
 namespace RPSLS
 {
     class RockPaperScissorsLizardSpock
-    {
-        Random random = new Random();
-        int PlayerOne;
-        int PlayerTwo;
+    {        
+        public int PlayerOne;
+        public int PlayerTwo;
+        public bool IsWinner;
 
         public void Play()
         {
-            string UserInput = getUserInput();
-            string CompInput = getCompInput();
-            
-
+            Player PlayerOne = new Player();
+            AI Computer = new AI();
+            string UserInput = PlayerOne.getUserInput();
+            string CompInput = Computer.getCompInput();
             Winner(UserInput, CompInput);
             Console.ReadLine();
-
         }
-
-
-
-        string getUserInput()
-        {
-
-            Console.WriteLine("Choose 'Rock', 'Paper', 'Scissors', 'Lizard', or 'Spock'.");
-            string choice = Console.ReadLine();
-
-            if (choice == "Rock")
-            {
-                return "Rock";
-            }
-            if (choice == "Paper")
-            {
-                return "Paper";
-            }
-            if (choice == "Scissors")
-            {
-                return "Scissors";
-            }
-            if (choice == "Lizard")
-            {
-                return "Lizard";
-            }
-            if (choice == "Spock")
-            {
-                return "Spock";
-            }
-            return "";
-        }
-            string getCompInput()
-                {
-
-                int number = random.Next(1, 6);
-                if (number == 1)
-                {
-                    return "Rock";  
-                }
-                if (number == 2)
-                {
-                    return "Paper";
-                }
-                if (number == 3)
-                {
-                    return "Scissors";
-                }
-                if (number == 4)
-                {
-                    return "Lizard";
-                }
-                if (number == 5)
-                {
-                    return "Spock";
-              
-                }
-            return "";
-            }
 
         public void Winner(string UserInput, string CompInput)
         {
-            for (int PlayerOne = 0; PlayerOne > 3; PlayerOne++)
+            Player PlayerHuman = new Player();
+            AI PlayerComputer = new AI();
+            PlayerOne = 0;
+            PlayerTwo = 0;
+            IsWinner = false;           
+            while (!IsWinner)
             {
+                PlayerHuman.getUserInput();
+                PlayerComputer.getCompInput();                
                 if ((UserInput == "Rock" && CompInput == "Scissors" || UserInput == "Rock" && CompInput == "Lizard" || UserInput == "Paper" && CompInput == "Rock" || UserInput == "Paper" && CompInput == "Spock" || UserInput == "Scissors" && CompInput == "Paper" || UserInput == "Scissors" && CompInput == "Lizard" || UserInput == "Lizard" && CompInput == "Spock" || UserInput == "Lizard" && CompInput == "Paper" || UserInput == "Spock" && CompInput == "Scissors" || UserInput == "Spock" && CompInput == "Rock"))
                 {
                     Console.Write("Player One chose " + UserInput + "and the computer chose " + CompInput + ". Player One wins!");
@@ -100,14 +48,15 @@ namespace RPSLS
                 {
                     Console.Write("Player One chose " + UserInput + " and the computer chose " + CompInput + ". Player One lost");
                     PlayerTwo++;
-                }
-
+                }                        
                 if (PlayerOne == 2)
                 {
+                    IsWinner = true;
                     Console.Write("Player One won best of 3!");
                 }
                 else if (PlayerTwo == 2)
                 {
+                    IsWinner = true;
                     Console.Write("Player Two won best of 3!");
                 }
             }
