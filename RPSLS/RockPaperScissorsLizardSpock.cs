@@ -9,13 +9,14 @@ namespace RPSLS
     class RockPaperScissorsLizardSpock
     {
         Random random = new Random();
+        int PlayerOne;
+        int PlayerTwo;
 
         public void Play()
         {
             string UserInput = getUserInput();
             string CompInput = getCompInput();
-            int PlayerOne;
-            int PlayerTwo;
+            
 
             Winner(UserInput, CompInput);
             Console.ReadLine();
@@ -82,21 +83,33 @@ namespace RPSLS
 
         public void Winner(string UserInput, string CompInput)
         {
-            if (( UserInput == "Rock" && CompInput == "Scissors" || UserInput == "Rock" && CompInput == "Lizard" || UserInput == "Paper" && CompInput == "Rock" || UserInput == "Paper" && CompInput == "Spock" || UserInput == "Scissors" && CompInput == "Paper" || UserInput == "Scissors" && CompInput == "Lizard" || UserInput == "Lizard" && CompInput == "Spock" || UserInput == "Lizard" && CompInput == "Paper" || UserInput == "Spock" && CompInput == "Scissors" || UserInput == "Spock" && CompInput == "Rock"))
+            for (int PlayerOne = 0; PlayerOne > 3; PlayerOne++)
             {
-            
-                Console.Write("Player One chose " +UserInput+ "and the computer chose " +CompInput+ ". Player One wins!");
-            }
+                if ((UserInput == "Rock" && CompInput == "Scissors" || UserInput == "Rock" && CompInput == "Lizard" || UserInput == "Paper" && CompInput == "Rock" || UserInput == "Paper" && CompInput == "Spock" || UserInput == "Scissors" && CompInput == "Paper" || UserInput == "Scissors" && CompInput == "Lizard" || UserInput == "Lizard" && CompInput == "Spock" || UserInput == "Lizard" && CompInput == "Paper" || UserInput == "Spock" && CompInput == "Scissors" || UserInput == "Spock" && CompInput == "Rock"))
+                {
+                    Console.Write("Player One chose " + UserInput + "and the computer chose " + CompInput + ". Player One wins!");
+                    PlayerOne++;
+                }
 
-            else if (UserInput == CompInput)
-            {
-                Console.Write("Great minds think alike, its a tie.");
-            }
+                else if (UserInput == CompInput)
+                {
+                    Console.Write("Great minds think alike, its a tie.");
+                }
 
-            else
-            {
-              
-                Console.Write("Player One chose " + UserInput + " and the computer chose " + CompInput + ". Player One lost");
+                else
+                {
+                    Console.Write("Player One chose " + UserInput + " and the computer chose " + CompInput + ". Player One lost");
+                    PlayerTwo++;
+                }
+
+                if (PlayerOne == 2)
+                {
+                    Console.Write("Player One won best of 3!");
+                }
+                else if (PlayerTwo == 2)
+                {
+                    Console.Write("Player Two won best of 3!");
+                }
             }
         }
     }
