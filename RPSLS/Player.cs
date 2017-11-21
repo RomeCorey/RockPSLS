@@ -34,9 +34,8 @@ namespace RPSLS
             {
                 return "Spock";
             }
-            return "";
-        }
-
-
-    }
+            return "";                     
+        }        
+        
+    }    
 }

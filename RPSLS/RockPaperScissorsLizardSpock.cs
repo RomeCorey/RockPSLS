@@ -44,7 +44,7 @@ namespace RPSLS
                 string CompInput = PlayerComputer.getCompInput();               
                 if ((UserInput == "Rock" && CompInput == "Scissors" || UserInput == "Rock" && CompInput == "Lizard" || UserInput == "Paper" && CompInput == "Rock" || UserInput == "Paper" && CompInput == "Spock" || UserInput == "Scissors" && CompInput == "Paper" || UserInput == "Scissors" && CompInput == "Lizard" || UserInput == "Lizard" && CompInput == "Spock" || UserInput == "Lizard" && CompInput == "Paper" || UserInput == "Spock" && CompInput == "Scissors" || UserInput == "Spock" && CompInput == "Rock"))
                 {
-                    Console.Write("Player One chose " + UserInput + "and the computer chose " + CompInput + ". Player One wins!");
+                    Console.Write("Player One chose " + UserInput + "and the computer chose " + CompInput + ". Player One wins! ");
                     PlayerOne++;
                 }
 
@@ -55,18 +55,20 @@ namespace RPSLS
 
                 else
                 {
-                    Console.Write("Player One chose " + UserInput + " and the computer chose " + CompInput + ". Player One lost");
+                    Console.Write("Player One chose " + UserInput + " and the computer chose " + CompInput + ". Player One lost ");
                     PlayerTwo++;
                 }                        
                 if (PlayerOne == 2)
                 {
                     IsWinner = true;
-                    Console.Write("Player One won best of 3!");
+                    Console.Write(" Player One won best of 3!");
+                    Console.ReadKey();
                 }
                 else if (PlayerTwo == 2)
                 {
                     IsWinner = true;
-                    Console.Write("Player Two won best of 3!");
+                    Console.Write(" Player Two won best of 3!");
+                    Console.ReadKey();
                 }
             }
         }
@@ -74,39 +76,43 @@ namespace RPSLS
         public void PlayerVsPlayer()
         {
             Player PlayerHuman = new Player();
-            AI PlayerHumanTwo = new AI();
+            Player PlayerHumanTwo = new Player();
             PlayerOne = 0;
             PlayerTwo = 0;
             IsWinner = false;
+            Console.WriteLine("Player One will enter thier choice, then Player Two will. No looking at each others choice! \n After Player One enters their choice the console will clear for Player Two to go! \n The game will be best of three!");
             while (!IsWinner)
             {
                 string UserInput = PlayerHuman.getUserInput();
-                string HumanInput = PlayerHumanTwo.getCompInput();
+                Console.Clear();                
+                string HumanInput = PlayerHumanTwo.getUserInput();                
                 if ((UserInput == "Rock" && HumanInput == "Scissors" || UserInput == "Rock" && HumanInput == "Lizard" || UserInput == "Paper" && HumanInput == "Rock" || UserInput == "Paper" && HumanInput == "Spock" || UserInput == "Scissors" && HumanInput == "Paper" || UserInput == "Scissors" && HumanInput == "Lizard" || UserInput == "Lizard" && HumanInput == "Spock" || UserInput == "Lizard" && HumanInput == "Paper" || UserInput == "Spock" && HumanInput == "Scissors" || UserInput == "Spock" && HumanInput == "Rock"))
                 {
-                    Console.Write("Player One chose " + UserInput + "and the computer chose " + HumanInput + ". Player One wins!");
-                    PlayerOne++;
+                    Console.Write("Player One chose " + UserInput + "and the Player Two chose " + HumanInput + ". Player One wins! ");
+                    PlayerOne++;                    
                 }
 
                 else if (UserInput == HumanInput)
                 {
-                    Console.Write("Great minds think alike, its a tie.");
+                    Console.Write("Great minds think alike, its a tie.");                    
                 }
 
                 else
                 {
-                    Console.Write("Player One chose " + UserInput + " and the computer chose " + HumanInput + ". Player One lost");
-                    PlayerTwo++;
+                    Console.Write("Player One chose " + UserInput + " and Player Two chose " + HumanInput + ". Player One lost ");
+                    PlayerTwo++;                    
                 }
                 if (PlayerOne == 2)
                 {
                     IsWinner = true;
                     Console.Write("Player One won best of 3!");
+                    Console.ReadKey();
                 }
                 else if (PlayerTwo == 2)
                 {
                     IsWinner = true;
                     Console.Write("Player Two won best of 3!");
+                    Console.ReadKey();
                 }
             }
         }
