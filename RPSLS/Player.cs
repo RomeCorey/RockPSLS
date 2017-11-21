@@ -7,11 +7,7 @@ using System.Threading.Tasks;
 namespace RPSLS
 {
     class Player
-    {
-        public int win;
-        public string name;
-        public int move;
-
+    {    
          public string getUserInput()
         {
 

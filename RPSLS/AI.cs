@@ -7,9 +7,7 @@ using System.Threading.Tasks;
 namespace RPSLS
 {
     class AI
-    {
-        int wins;
-        int move;
+    {        
         Random random = new Random();
 
         public string getCompInput()
